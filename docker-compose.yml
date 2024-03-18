@@ -1,0 +1,16 @@
+version: '3'
+volumes:
+  psql_learnnextjs:
+
+services:
+  psql:
+    image: postgres:16.2
+    environment:
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: test1234
+      POSTGRES_DB: nextjs-dashboard-postgres
+      POSTGRES_HOST_AUTH_METHOD: trust
+    volumes:
+      - psql_learnnextjs:/var/lib/postgresql/data
+    ports:
+      - 5999:5432
